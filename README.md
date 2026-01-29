@@ -90,7 +90,9 @@ npm run seed
 text
 movie-library/
 ├──backend/ # Бэкенд на Node.js
+
 ├──frontend/ # Фронтенд на React
+
 ├─ .env/ # Конфигурация (создается автоматически)
 ├─ package.json # Скрипты управления
 ├─ setup.sh # Автоматическая установка
