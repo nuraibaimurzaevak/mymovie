@@ -1,0 +1,342 @@
+/* src/components/Header.css */
+
+/* Основные стили хедера */
+.header {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Логотип */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+}
+
+.logo-text {
+  line-height: 1.2;
+}
+
+.logo-title {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Основной контейнер */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+/* Поиск для десктопа */
+.desktop-search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 24px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-search {
+    display: block;
+  }
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-right: 48px;
+  border-radius: 10px;
+  background-color: #374151;
+  color: white;
+  border: 2px solid transparent;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.search-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.3s ease;
+}
+
+.search-button:hover {
+  color: white;
+}
+
+/* Правая часть */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-button {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #7c3aed;
+}
+
+.user-icon-mobile {
+  display: block;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.user-icon-mobile:hover {
+  background-color: #374151;
+}
+
+@media (min-width: 768px) {
+  .login-button {
+    display: flex;
+  }
+  
+  .user-icon-mobile {
+    display: none;
+  }
+}
+
+/* Кнопка меню */
+.menu-button {
+  display: block;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #374151;
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
+/* Навигация для десктопа */
+.desktop-nav {
+  display: none;
+  padding: 12px 0;
+  border-top: 1px solid #374151;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.nav-link {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #374151;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  background-color: #1f2937;
+  border-top: 1px solid #374151;
+}
+
+.mobile-search-container {
+  padding: 16px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-link {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 16px 24px;
+  border-bottom: 1px solid #374151;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: white;
+  background-color: #374151;
+}
+
+.mobile-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  margin: 8px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-login-button:hover {
+  background-color: #7c3aed;
+}
+
+/* Анимация появления мобильного меню */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Иконки */
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 768px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Дополнительные утилиты */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+}
