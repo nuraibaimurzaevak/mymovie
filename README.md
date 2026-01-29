@@ -3,7 +3,7 @@
 📦 Быстрая установка (автоматический скрипт)
 bash
 # 1. Клонируйте проект
-git clone https://github.com/yourusername/movie-library.git
+git clone https://github.com/nuraibaimurzaevak/mymovie.git
 cd movie-library
 
 # 2. Запустите установочный скрипт (автоматически настраивает всё)
