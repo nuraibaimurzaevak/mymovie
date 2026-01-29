@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# 🎬 Flicklib - Библиотека фильмов
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Тестовый проект умной библиотеки фильмов с интеграцией TMDB API.
 
-## Available Scripts
+## 🚀 Быстрый старт
 
-In the project directory, you can run:
+### Стек технологий
+- **Backend**: MongoDB
+- **Frontend**: React/CSS
+- **База данных**:MongoDB
+- **API**: The Movie Database (TMDB) API
+- **Кэширование**: bjcrypt
 
-### `npm start`
+### 📋 Предварительные требования
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **React**
+2. **Node.js 16+** 
+3. **API ключ TMDB** (бесплатный)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### ⚙️ Настройка проекта
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### 🔑 Получение API ключа TMDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Зарегистрируйтесь на [The Movie Database](https://www.themoviedb.org/signup)
+2. Перейдите в [настройки API](https://www.themoviedb.org/settings/api)
+3. Нажмите "Create" для нового API ключа
+4. Выберите тип "Developer"
+5. Скопируйте ключ (выглядит как `abcdef1234567890abcdef1234567890`)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔑 Использование API ключа TMDB
+Создайте файл .env в папке backend 
+Пропишите 
+a)  # ⚠️ ВАШ КЛЮЧ TMDB - получите на https://www.themoviedb.org/settings/api
+TMDB_API_KEY=ваш_ключ_сюда_вставьте
+ b) # ⚠️ Базовый URL API TMDB - оставьте как есть
+TMDB_BASE_URL=https://api.themoviedb.org/3
+⚠️ Подключение к MongoDB
+c)  # Вариант 1: Локальная MongoDB
+MONGODB_URI=mongodb://localhost:27017/movielib
+d) # Вариант 2: MongoDB Atlas (облачная)
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/movielib
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+e) # ⚠️ Секретный ключ для JWT - сгенерируйте свой или используйте этот
+JWT_SECRET=ваш_секретный_ключ_минимум_32_символа
+JWT_EXPIRE=30d
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ⚙️ Настройка проекта
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 1. Клонирование репозитория
+```bash
+git clone https://github.com/nuraibaimurzaevak/mymovie.git
+cd my-movie
+cd backend > npm run dev
+cd frontend > npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
