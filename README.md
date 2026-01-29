@@ -89,22 +89,30 @@ npm run seed
 
 text
 movie-library/
+
 ├──backend/ # Бэкенд на Node.js
 
 ├──frontend/ # Фронтенд на React
 
 ├─ .env/ # Конфигурация (создается автоматически)
+
 ├─ package.json # Скрипты управления
+
 ├─ setup.sh # Автоматическая установка
+
 ├── start.sh # Автоматический запуск
+
 └── README.md # Эта инструкция
+
 
 🔧 Файлы для автоматической настройки
 
 setup.sh (автоматическая установка)
 
 bash
+
 #!/bin/bash
+
 echo "🎬 Установка Movie Library..."
 
 # Установка Node.js
@@ -116,56 +124,83 @@ fi
 
 # Установка MongoDB
 if ! command -v mongod &> /dev/null; then
+
 echo "🗄️ Устанавливаем MongoDB..."
+
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
 sudo apt update
+
 sudo apt install -y mongodb-org
+
 sudo systemctl start mongod
+
 sudo systemctl enable mongod
-fi
 
 # Установка зависимостей
 echo "📥 Устанавливаем зависимости..."
+
 npm install
+
 cd client && npm install
+
 cd ..
 
 # Создание .env файла
 if [ ! -f .env ]; then
+
 echo "⚙️ Создаем конфигурационный файл..."
+
 cat > .env << EOL
+
 TMDB_API_KEY=ваш_ключ_сюда
+
 MONGODB_URI=mongodb://localhost:27017/movielib
+
 PORT=5000
+
 JWT_SECRET=$(openssl rand -hex 32)
+
 FRONTEND_URL=http://localhost:3000
-EOL
+
 echo "✅ .env файл создан. Не забудьте добавить TMDB API ключ!"
-fi
 
 echo "✅ Установка завершена!"
+
 echo "👉 Запустите: npm start"
 
 start.sh (автоматический запуск)
 
 bash
+
 #!/bin/bash
+
 echo "🚀 Запуск Movie Library..."
 
 # Проверка MongoDB
+
 if ! pgrep -x "mongod" > /dev/null; then
+
 echo "🗄️ Запускаем MongoDB..."
+
 sudo systemctl start mongod
-fi
+
+
 
 # Проверка .env файла
+
 if [ ! -f .env ]; then
+
 echo "❌ Файл .env не найден!"
+
 echo "Создайте его: cp .env.example .env"
+
 echo "И добавьте TMDB API ключ"
-exit 1
-fi
+
+exit 
+
 
 # Запуск сервера
 echo "🔧 Запускаем бэкенд..."
