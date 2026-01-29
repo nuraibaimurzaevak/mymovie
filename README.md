@@ -18,13 +18,6 @@ cd movie-library
 Шаг 1: Установите зависимости
 
 bash
-# Для Ubuntu/Debian:
-sudo apt update
-sudo apt install -y nodejs npm mongodb git curl
-
-# Для macOS:
-brew install node mongodb-community
-
 # Для Windows:
 Скачайте Node.js с nodejs.org и MongoDB с mongodb.com
 
