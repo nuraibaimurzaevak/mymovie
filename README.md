@@ -1,5 +1,7 @@
-🎬 Flicklib - Библиотека фильмов
+# 🎬 Flicklib - Библиотека фильмов
+
 🚀 Мгновенный запуск за 3 минуты
+
 📦 Быстрая установка (автоматический скрипт)
 
 bash
@@ -9,7 +11,7 @@ cd movie-library
 
 # 2. Запустите установочный скрипт (автоматически настраивает всё)
 ./setup.sh
-# ИЛИ вручную выполните команды ниже
+ИЛИ вручную выполните команды ниже
 
 📋 Ручная установка (шаг за шагом)
 
@@ -24,15 +26,17 @@ sudo apt install -y nodejs npm mongodb git curl
 brew install node mongodb-community
 
 # Для Windows:
-# Скачайте Node.js с nodejs.org и MongoDB с mongodb.com
+Скачайте Node.js с nodejs.org и MongoDB с mongodb.com
 
 Шаг 2: Настройте проект
 
 bash
 # 1. Скачайте проект
 git clone https://github.com/nuraibaimurzaevak/mymovie.git
+
 cd my-movie
 # 2. Запустите скрипт настройки
+
 chmod +x install.sh && ./install.sh
 
 Шаг 3: Настройте API ключ TMDB
@@ -40,17 +44,24 @@ chmod +x install.sh && ./install.sh
 bash
 # Получите БЕСПЛАТНЫЙ ключ TMDB:
 1. Откройте: https://www.themoviedb.org/signup
-2. Зарегистрируйтесь (30 секунд)
-3. Перейдите: https://www.themoviedb.org/settings/api
-4. Нажмите "Create" → "Developer"
-5. Скопируйте ключ (пример: 1a2b3c4d5e6f7g8h9i0j)
+   
+3. Зарегистрируйтесь (30 секунд)
+   
+5. Перейдите: https://www.themoviedb.org/settings/api
+   
+7. Нажмите "Create" → "Developer"
+   
+9. Скопируйте ключ (пример: 1a2b3c4d5e6f7g8h9i0j)
 
 # Автоматически создаст .env файл с вашим ключом
 ./configure.sh YOUR_TMDB_API_KEY
 
-# ИЛИ создайте вручную:
+ИЛИ создайте вручную:
+
 echo "TMDB_API_KEY=ваш_ключ_тут" > .env
+
 echo "MONGODB_URI=mongodb://localhost:27017/movielib" >> .env
+
 echo "PORT=5000" >> .env
 
 Шаг 4: Запустите всё одной командой
@@ -62,8 +73,11 @@ npm run start:all
 ./start.sh
 
 🎯 Готово! Откройте в браузере:
+
 🔗 Фронтенд: http://localhost:3000
+
 🔗 API Сервер: http://localhost:5000
+
 🔗 Документация API: http://localhost:5000/api-docs
 
 🛠 Скрипты для быстрого управления
@@ -85,6 +99,7 @@ npm run db:reset
 npm run seed
 
 Автоматическая структура проекта
+
 Проект создаст все нужные папки и файлы автоматически:
 
 text
@@ -117,8 +132,11 @@ echo "🎬 Установка Movie Library..."
 
 # Установка Node.js
 if ! command -v node &> /dev/null; then
+
 echo "📦 Устанавливаем Node.js..."
+
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
 sudo apt install -y nodejs
 fi
 
@@ -233,20 +251,34 @@ json
 
 "scripts": {
 "start": "concurrently \"npm run server\" \"npm run client\"",
+
 "server": "cd server && npm run dev",
+
 "client": "cd client && npm start",
+
 "install:all": "npm install && cd client && npm install",
+
 "mongo:start": "sudo systemctl start mongod",
+
 "mongo:stop": "sudo systemctl stop mongod",
+
 "mongo:status": "sudo systemctl status mongod",
+
 "db:reset": "cd server && npm run db:reset",
+
 "seed": "cd server && npm run seed",
+
 "test": "cd server && npm test && cd ../client && npm test",
+
 "build": "cd client && npm run build"
+
 },
 "devDependencies": {
+
 "concurrently": "^8.0.0"
+
 }
+
 }
 
 🔍 Проверка работоспособности
@@ -256,6 +288,7 @@ json
 bash
 # Проверка API
 curl http://localhost:5000/health
+
 Ответ: {"status":"ok","tmdb":"connected"}
 
 Проверка MongoDB
